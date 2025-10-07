@@ -1,9 +1,9 @@
 # importing required libraries
-import dash
-import dash_core_components as dcc    
-import dash_html_components as html
+from dash import Dash, dcc, html, Input, Output
+import os
 
-app = dash.Dash()
+app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div(children =[
     html.H1("Dash Tutorial"),
@@ -28,4 +28,4 @@ app.layout = html.Div(children =[
 ])
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8050)
